@@ -16,27 +16,3 @@
   <li><strong>Geofencing:</strong> Geofencing capabilities allow farmers to define virtual boundaries within their land. Whenever a bulldozer enters or exits these predefined boundaries, the application sends instant notifications to the relevant stakeholders, ensuring proactive monitoring and control.</li>
   <li><strong>Historical Data and Analytics:</strong> The application stores historical data related to bulldozer movements, allowing farmers to analyze patterns and trends over time. This data can provide insights into optimizing land usage, identifying potential areas of concern, and improving overall operational efficiency.</li>
 </ul>
-<h2>Installation</h2>
-<ol>
-  <li>Clone the repository: <code>git clone https://github.com/your/repository.git</code></li>
-  <li>Install the required dependencies: <code>npm install</code></li>
-  <li>Configure the application settings, including sensor connections and API endpoints, in the <code>config.js</code> file.</li>
-  <li>Start the application: <code>npm start</code></li>
-  <li>Access the application through the provided URL or host it on a web server for easy access.</li>
-</ol>
-<h2>System Requirements</h2>
-<ul>
-  <li>Operating System: Windows 10, macOS, Linux</li>
-  <li>Node.js version 12 or later</li>
-  <li>Internet connection for real-time data updates and tracking</li>
-</ul>
-<h2>Contributing</h2>
-<p>Contributions to the Soil Monitoring and Bulldozer Tracking Application are welcome. To contribute, follow these steps:</p>
-<ol>
-  <li>Fork the repository.</li>
-  <li>Create a new branch for your feature or bug fix: <code>git checkout -b my-feature</code></li>
-  <li>Make the necessary changes and commit them: <code>git commit -am 'Add new feature'</code></li>
-  <li>Push the branch to your fork: <code>git push origin my-feature</code></li>
-  <li>Submit a pull request to the main repository.</li>
-</ol>
-<p>Please ensure that your code adheres to the existing coding standards and includes appropriate documentation.</p>
