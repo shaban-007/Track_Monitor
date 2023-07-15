@@ -1,5 +1,5 @@
 <h1>Soil Monitoring and Bulldozer Tracking Application</h1>
-<img src="logo.png" alt="Logo">
+
 <p>The Soil Monitoring and Bulldozer Tracking Application is a comprehensive software solution designed to monitor soil conditions in agricultural lands and track the movements of bulldozers within these areas. This application provides farmers and landowners with valuable insights into soil health, allowing them to make informed decisions to optimize agricultural productivity and reduce environmental impact.</p>
 <h2>Features</h2>
 <h3>1. Soil Monitoring</h3>
