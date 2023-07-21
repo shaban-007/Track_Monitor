@@ -114,6 +114,7 @@ class _MapState extends State<Mape> {
     return Scaffold(
       appBar: AppBar(
         title: Text('${widget.name}'),
+        backgroundColor: Colors.green[600],
       ),
       body: Stack(
         children: [

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:tracking_history/widgets/maps.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Cars extends StatefulWidget {
+  static const routeName = '/car';
+  const Cars({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Cars> createState() => _CarsState();
 }
 
-class _HomeState extends State<Home> {
+class _CarsState extends State<Cars> {
   String _selectedAction = 'Car 1';
   String _bodyContent = '';
   List<String> _selectedDays = [];
@@ -31,6 +32,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.green[600],
         title: Text('AppBar with Actions'),
         actions: [
           PopupMenuButton<String>(
