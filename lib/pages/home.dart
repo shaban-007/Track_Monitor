@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tracking_history/widgets/maps.dart';
 
-class Car {
-  final String name;
-  bool isSelected;
-
-  Car(this.name, this.isSelected);
-}
-
 class Home extends StatefulWidget {
   const Home({super.key});
 
