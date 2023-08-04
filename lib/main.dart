@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tracking_history/pages/homepage.dart';
+import 'package:tracking_history/Screens/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Homepage(),
     );
   }

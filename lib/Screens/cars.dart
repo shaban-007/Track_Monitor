@@ -11,12 +11,11 @@ class Cars extends StatefulWidget {
 
 class _CarsState extends State<Cars> {
   String _selectedAction = 'Car 1';
-  String _bodyContent = '';
   List<String> _selectedDays = [];
 
-  List<String> _actions = ['Car 1', 'Car 2', 'Car 3'];
+  final List<String> _actions = ['Car 1', 'Car 2', 'Car 3'];
 
-  Map<String, List<String>> _actionDaysMap = {
+  final Map<String, List<String>> _actionDaysMap = {
     'Car 1': ['Monday', 'Tuesday', 'Wednesday'],
     'Car 2': ['Thursday', 'Friday'],
     'Car 3': ['Saturday', 'Sunday'],
@@ -33,7 +32,7 @@ class _CarsState extends State<Cars> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green[600],
-        title: Text('AppBar with Actions'),
+        title: const Text('AppBar with Actions'),
         actions: [
           PopupMenuButton<String>(
             onSelected: (String action) {

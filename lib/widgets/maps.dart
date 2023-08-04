@@ -23,15 +23,19 @@ class _MapState extends State<Mape> {
     Car(
       'Car 1',
       {
-        'Monday': [
+        'Monday': const [
           LatLng(30.164907, 31.206471),
           LatLng(30.164896, 31.206421),
           LatLng(30.164896, 31.206356),
           LatLng(30.164894, 31.206305),
           LatLng(30.164894, 31.206254),
           LatLng(30.164952, 31.206248),
+          LatLng(30.165046, 31.206225),
+          LatLng(30.165124, 31.206241),
+          LatLng(30.165116, 31.206131),
+          LatLng(30.165103, 31.205995),
         ],
-        'Tuesday': [
+        'Tuesday': const [
           LatLng(30.164774, 31.205859),
           LatLng(30.164774, 31.205859),
           LatLng(30.164878, 31.205900),
@@ -39,7 +43,7 @@ class _MapState extends State<Mape> {
           LatLng(30.164915, 31.205863),
           LatLng(30.164911, 31.205828),
         ],
-        'Wednesday': [
+        'Wednesday': const [
           LatLng(30.165082, 31.205543),
           LatLng(30.165087, 31.205635),
           LatLng(30.165090, 31.205718),
@@ -52,12 +56,12 @@ class _MapState extends State<Mape> {
     Car(
       'Car 2',
       {
-        'Thursday': [
+        'Thursday': const [
           LatLng(37.432965331129, -122.088323557078792),
           LatLng(37.432966331129, -123.088323557078792),
           LatLng(37.432967331129, -124.088323557078792),
         ],
-        'Friday': [
+        'Friday': const [
           LatLng(37.432965331129, -122.088323557078792),
           LatLng(37.432966331129, -123.088323557078792),
           LatLng(37.432967331129, -124.088323557078792),

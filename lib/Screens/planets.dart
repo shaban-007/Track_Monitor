@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tracking_history/pages/Monitor.dart';
+import 'package:tracking_history/Screens/Monitor.dart';
 
 class Plantes extends StatelessWidget {
   final List<String> items = [
@@ -21,24 +21,24 @@ class Plantes extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
-          title: Text('List with Pictures'),
+          title: const Text('List with Pictures'),
           backgroundColor: Colors.green[600],
         ),
         body: GridView.builder(
           itemCount: items.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 0.8,
           ),
           itemBuilder: (context, index) {
             return Card(
               elevation: 4,
-              margin: EdgeInsets.all(8),
+              margin: const EdgeInsets.all(8),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -54,7 +54,7 @@ class Plantes extends StatelessWidget {
                       width: double.infinity,
                       height: 150,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.vertical(
+                        borderRadius: const BorderRadius.vertical(
                           top: Radius.circular(12),
                         ),
                         image: DecorationImage(
@@ -68,7 +68,7 @@ class Plantes extends StatelessWidget {
                       child: Center(
                         child: Text(
                           items[index],
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),

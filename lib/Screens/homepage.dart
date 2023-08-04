@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:tracking_history/pages/Cars.dart';
-import 'package:tracking_history/pages/Planets.dart';
+import 'package:tracking_history/Screens/cars.dart';
+import 'package:tracking_history/Screens/planets.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -24,7 +23,7 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green[600],
-        title: Text('Smart Irrigation'),
+        title: const Text('Smart Irrigation'),
         leading: SizedBox(
           width: 48,
           height: 48,
@@ -52,15 +51,15 @@ class DetailPage extends StatelessWidget {
                       height: 200,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage('assets/planet_image.jpg'),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     'Planets',
                     style: TextStyle(
                       fontSize: 18,
@@ -71,11 +70,11 @@ class DetailPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Cars()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Cars()));
               },
               child: Column(
                 children: [
@@ -89,15 +88,15 @@ class DetailPage extends StatelessWidget {
                       height: 200,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage('assets/car_image.jpg'),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     'Cars',
                     style: TextStyle(
                       fontSize: 18,

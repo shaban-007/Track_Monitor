@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:tracking_history/Classes/Historyclass.dart';
+import 'package:tracking_history/models/Historyclass.dart';
+import 'dart:math';
 
 class HistoryPage extends StatelessWidget {
+  double roundDouble(double value, int places) {
+    num mod = pow(10.0, places);
+    return ((value * mod).round().toDouble() / mod);
+  }
+
   final List<SensorData> historyList;
 
   HistoryPage({required this.historyList});
@@ -12,7 +18,7 @@ class HistoryPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green[600],
-        title: Text('History'),
+        title: const Text('History'),
       ),
       body: ListView.builder(
         itemCount: historyList.length,
@@ -22,19 +28,22 @@ class HistoryPage extends StatelessWidget {
               .format(DateTime.parse(data.timestamp));
           return Card(
             elevation: 2,
-            margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+            margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
             child: ListTile(
-              leading: Icon(Icons.access_time),
+              leading: const Icon(Icons.access_time),
               title: Text('$formattedDateTime'),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Temperature: ${data.temperature}°C'),
-                  Text('Humidity: ${data.soilMoisture}%'),
-                  Text('Salinity: ${data.soilSalinity}'),
+                  Text(
+                      'Temperature: ${roundDouble(double.parse(data.temperature), 2)}°C'),
+                  Text(
+                      'Humidity: ${roundDouble(double.parse(data.soilMoisture), 2)}%'),
+                  Text(
+                      'Salinity: ${roundDouble(double.parse(data.soilSalinity), 2)}'),
                 ],
               ),
             ),

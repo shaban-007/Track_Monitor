@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
-
-import 'package:tracking_history/Classes/ServiceClass.dart';
-import '../Classes/Historyclass.dart';
+import 'package:tracking_history/Screens/charts.dart';
+import 'package:tracking_history/widgets/sensorCard.dart';
+import 'package:tracking_history/services/ServiceClass.dart';
+import '../models/Historyclass.dart';
 import 'History.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'dart:math';
 
 class Monitor extends StatelessWidget {
+  double roundDouble(double value, int places) {
+    num mod = pow(10.0, places);
+    return ((value * mod).round().toDouble() / mod);
+  }
+
   final ApiService apiService = ApiService();
   // List<SensorData> data =  apiService.fetchSensorData();
   Monitor({Key? key}) : super(key: key);
@@ -29,11 +36,11 @@ class Monitor extends StatelessWidget {
           final sensorDataList = snapshot.data;
           return Scaffold(
             appBar: AppBar(
-              title: Text('Soil Monitoring'),
+              title: const Text('Soil Monitoring'),
               backgroundColor: Colors.green[600],
               actions: [
                 IconButton(
-                  icon: Icon(Icons.history),
+                  icon: const Icon(Icons.history),
                   onPressed: () async {
                     Navigator.push(
                       context,
@@ -44,6 +51,17 @@ class Monitor extends StatelessWidget {
                     );
                   },
                 ),
+                IconButton(
+                    onPressed: () async {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              ChartsPage(historyList: sensorDataList ?? []),
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.bar_chart)),
               ],
             ),
             body: SingleChildScrollView(
@@ -52,24 +70,24 @@ class Monitor extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    _buildSensorCard(
+                    buildSensorCard(
                       title: 'Temperature',
                       value:
-                          '${sensorDataList?.isNotEmpty == true ? sensorDataList![0].temperature : 'N/A'}°C',
+                          '${sensorDataList?.isNotEmpty == true ? roundDouble(double.parse(sensorDataList![0].temperature), 2) : 'N/A'}°C',
                       icon: Icons.thermostat_outlined,
                     ),
-                    SizedBox(height: 16),
-                    _buildSensorCard(
-                      title: 'Humidity',
+                    const SizedBox(height: 16),
+                    buildSensorCard(
+                      title: 'Moisture',
                       value:
-                          '${sensorDataList?.isNotEmpty == true ? sensorDataList![0].soilMoisture : 'N/A'}%',
+                          '${sensorDataList?.isNotEmpty == true ? roundDouble(double.parse(sensorDataList![0].soilMoisture), 2) : 'N/A'}%',
                       icon: Icons.opacity_outlined,
                     ),
-                    SizedBox(height: 16),
-                    _buildSensorCard(
+                    const SizedBox(height: 16),
+                    buildSensorCard(
                       title: 'Salinity',
                       value:
-                          '${sensorDataList?.isNotEmpty == true ? sensorDataList![0].soilSalinity : 'N/A'}',
+                          '${sensorDataList?.isNotEmpty == true ? roundDouble(double.parse(sensorDataList![0].soilSalinity), 2) : 'N/A'}',
                       icon: Icons.grain_outlined,
                     ),
                   ],
@@ -79,44 +97,6 @@ class Monitor extends StatelessWidget {
           );
         }
       },
-    );
-  }
-
-  Widget _buildSensorCard({String? title, String? value, IconData? icon}) {
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Icon(
-              icon,
-              size: 64,
-              color: Colors.blue,
-            ),
-            SizedBox(height: 16),
-            Text(
-              title!,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 8),
-            Text(
-              value!,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.green,
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

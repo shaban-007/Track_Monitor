@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:tracking_history/Classes/Historyclass.dart';
+import 'package:tracking_history/models/Historyclass.dart';
 
 class ApiService {
   static const String apiUrl =
