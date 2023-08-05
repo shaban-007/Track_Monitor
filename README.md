@@ -1,3 +1,5 @@
+https://github.com/shaban-007/Track_Monitor/assets/58948223/574953ac-66ba-4364-8244-f028ff6e21e8
+
 <h1>Soil Monitoring and Bulldozer Tracking Application</h1>
 
 <p>The Soil Monitoring and Bulldozer Tracking Application is a comprehensive software solution designed to monitor soil conditions in agricultural lands and track the movements of bulldozers within these areas. This application provides farmers and landowners with valuable insights into soil health, allowing them to make informed decisions to optimize agricultural productivity and reduce environmental impact.</p>
@@ -17,4 +19,3 @@
   <li><strong>Historical Data and Analytics:</strong> The application stores historical data related to bulldozer movements, allowing farmers to analyze patterns and trends over time. This data can provide insights into optimizing land usage, identifying potential areas of concern, and improving overall operational efficiency.</li>
 </ul>
 
-https://github.com/shaban-007/Track_Monitor/assets/58948223/574953ac-66ba-4364-8244-f028ff6e21e8
